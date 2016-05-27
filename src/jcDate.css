@@ -1,10 +1,8 @@
 #jcDate { background:#fefefe; width:161px; padding:10px; height:203px; position:absolute; z-index:1000; border:2px solid #2b84b5; color:#333; display:none; font-size:0; overflow:hidden; }
-#jcDate.jcDateIco { background:#fff url(./images/dateIco.png) no-repeat right center; }
 #jcDate * { margin:0; padding:0; font-family: "宋体", Arial, "新宋体"; font-size:12px; color:#555555; list-style:none; }
 #jcDate .clear { clear:both; height:0; visibility:hidden; }
 #jcDate input.jcDate { cursor:pointer; }
 #jcDate a { text-decoration:none; cursor:pointer; }
-/*#jcDate a:hover {color:red; text-decoration:underline;}*/
 #jcDate a img { border:0; vertical-align:middle; }
 #jcDateTt { height:15px; line-height:15px; position:relative; margin-bottom:10px; }
 #jcDateTt a { color:#333; display:block; position:absolute; top:0; width:15px; height:15px; cursor:pointer; }
@@ -16,7 +14,7 @@
 #jcDateTt div samp,#jcDateTt div span { margin:0 5px; color:#333; font-size:12px; font-weight:bold; cursor:pointer; }
 #jcDateTt div samp:hover,#jcDateTt div span:hover,#jcDateTt div samp.visited,#jcDateTt div span.visited { color:#2b84b5; }
 #jcDateMax { width:1935px; height:124px; position:relative; left:-687px; top:0;}
-#jcDateMax ul { width:161px; font-size:0; float:left; height:124px; display:inline-black; }
+#jcDateMax ul { width:161px; font-size:0; float:left; height:124px; display:inline-block; }
 #jcDayWrap { overflow:hidden; }
 #jcYeas,#jcMonth { display:none; overflow:hidden; padding-left:2px; margin-bottom:10px; }
 #jcYeas dt,#jcYeas dd { font-weight:bold; width:53px; height:30px; float:left; text-align:center; line-height:30px; cursor:pointer; }
