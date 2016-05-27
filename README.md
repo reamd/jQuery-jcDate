@@ -1,14 +1,18 @@
 # jQuery-jcDate说明
 基于jQuery-jcDate完善修改
 # jQuery-jcDate示例
+- **首先引入库相关的.css .js文件**
 ```js
-//首先引入库相关的.css .js文件
 <link rel="stylesheet" type="text/css" href="../src/jcDate.css" media="all" />
 <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.js"></script>
 <script type="text/javascript" src="../src/jQuery-jcDate.js" charset="utf-8"></script>
-
+```
+- **html input元素**
+```js
 <input class="jcDate"/>
-//调用
+```
+- **控件初始化**
+```js
 $(".jcDate").jcDate({
         Class : "", //为input注入自定义的class类（默认为空）
         Default: "today", //设置默认日期（默认为当天）
