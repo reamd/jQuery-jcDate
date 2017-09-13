@@ -31,6 +31,5 @@ var gulp = require('gulp'),
     });
 
     gulp.task('default', function() {
-        gulp.run
-        ('clean', 'styles', 'scripts');
+        gulp.run('clean', 'styles', 'scripts');
     });

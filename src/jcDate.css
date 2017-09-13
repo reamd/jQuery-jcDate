@@ -1,4 +1,4 @@
-#jcDate { background:#fefefe; width:161px; padding:10px; height:203px; position:absolute; z-index:1000; border:2px solid #2b84b5; color:#333; display:none; font-size:0; overflow:hidden; }
+#jcDate { background:#fefefe; box-sizing: content-box; width:161px; padding:10px; height:203px; position:absolute; z-index:1000; border:2px solid #2b84b5; color:#333; display:none; font-size:0; overflow:hidden; }
 #jcDate * { margin:0; padding:0; font-family: "宋体", Arial, "新宋体"; font-size:12px; color:#555555; list-style:none; }
 #jcDate .clear { clear:both; height:0; visibility:hidden; }
 #jcDate input.jcDate { cursor:pointer; }

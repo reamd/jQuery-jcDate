@@ -16,7 +16,7 @@
             Event : "click",
             Speed : 100,
             Left : 0,
-            Top : 22,
+            Top : $('input.jcDate')[0].getBoundingClientRect().height,
             Format : "-",
             DoubleNum: true,
             Timeout : 100,

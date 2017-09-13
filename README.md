@@ -4,7 +4,7 @@
 - **首先引入库相关的.css .js文件**
 ```js
 <link rel="stylesheet" type="text/css" href="../src/jcDate.css" media="all" />
-<script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.js"></script>
+<script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.js" charset="utf-8"></script>
 <script type="text/javascript" src="../src/jQuery-jcDate.js" charset="utf-8"></script>
 ```
 - **html input元素**

@@ -1,13 +1,13 @@
 {
   "name": "jquery-jcdate",
   "version": "1.0.0",
-  "description": "这是一款事时间控件插件",
+  "description": "jQuery时间插件",
   "main": "gulpfiles.js",
   "directories": {
     "example": "example"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp"
   },
   "repository": {
     "type": "git",
