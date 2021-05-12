@@ -304,18 +304,33 @@
                 submitDate();
             });
             $dateInput.addClass(options.Class).off().on(options.Event,function(e){
-                    $(this).addClass("dateVisited");
-                    var iof = $(this).offset();
-                    $jcDate.css({ "left" : iof.left+options.Left,"top" : iof.top+options.Top });
-                    $jcDate.show(options.Speed);
-                    $jcDayWrap.show();
-                    $jcYeas.hide();
-                    $jcMonth.hide();
-                    $("#d_prev,#d_next").show();
-                    $year.show();
-                    $month.show();
-                    $b.show();
-                });
+                // 增加日期盘选中重排策略
+                var dateStr = $(this).val();
+                if (dateStr) {
+                    var dateArr = dateStr.split(options.Format);
+                    today(dateArr[0], dateArr[1], dateArr[2]);
+                }
+                if ($("input.dateVisited").length) {
+                    $("input.dateVisited").removeClass("dateVisited");
+                }
+                $(this).addClass("dateVisited");
+                var iof = $(this).offset();
+                $jcDate.css({ "left" : iof.left+options.Left,"top" : iof.top+options.Top });
+                $jcDate.show(options.Speed);
+                $jcDayWrap.show();
+                $jcYeas.hide();
+                $jcMonth.hide();
+                $("#d_prev,#d_next").show();
+                $year.show();
+                $month.show();
+                $b.show();
+            });
+            $dateInput.off("mouseleave").on("mouseleave",function(){
+                $dateInput.off("blur");    
+            });    
+            $dateInput.off("blur").on("blur",function(){
+                setTimeout(closeDate,options.Timeout);
+            });
             $jcDate.off().on("mouseleave",function(){
                 setTimeout(closeDate,options.Timeout);
             });

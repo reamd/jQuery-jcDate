@@ -1,35 +1,33 @@
 /**
- * Created by reamd on 5/28/2016.
+ * Created by reamd on 12/05/2021.
  */
-var gulp = require('gulp'),
-    mincss = require('gulp-minify-css'),
-    jshint = require('gulp-jshint'),
-    uglify = require('gulp-uglify'),
-    concat = require('gulp-concat'),
-    notify = require('gulp-notify'),
-    rename = require('gulp-rename'),
-    del = require('del');
+const fs = require('fs/promises');
+const uglify = require('gulp-uglify');
+const notify = require("gulp-notify");
+const rename = require("gulp-rename");
+const cssmin = require('gulp-cssmin');
+const { series, src, dest } = require('gulp');
 
-    gulp.task('scripts', function() {
-        return gulp.src('src/*.js')
-            .pipe(rename({suffix: '.min'}))
-            .pipe(uglify())
-            .pipe(gulp.dest('dist/'))
-            .pipe(notify({ message: 'Scripts task complete' }));
-    });
+function scripts() {
+    return src('src/*.js')
+    .pipe(rename({suffix: '.min'}))
+    .pipe(uglify())
+    .pipe(dest('dist/'))
+    .pipe(notify('Scripts task complete'));
+}
 
-    gulp.task('styles', function() {
-        return gulp.src('src/*.css')
-            .pipe(rename({suffix: '.min'}))
-            .pipe(mincss())
-            .pipe(gulp.dest('dist/'))
-            .pipe(notify({ message: 'Styles task complete' }));
-    });
+function styles() {
+    return src('src/*.css')
+    .pipe(rename({suffix: '.min'}))
+    .pipe(cssmin())
+    .pipe(dest('dist/'))
+    .pipe(notify('Styles task complete'));
+}
 
-    gulp.task('clean', function(cb) {
-        del(['dist/'], cb)
-    });
+async function clean() {
+    await fs.rmdir('dist/', { recursive: true });
+    console.log('清除完成');
+}
 
-    gulp.task('default', function() {
-        gulp.run('clean', 'styles', 'scripts');
-    });
+exports.clean = clean;
+exports.default = series(clean, styles, scripts);
